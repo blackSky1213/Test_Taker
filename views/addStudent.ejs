@@ -1,0 +1,35 @@
+<%- include("header") -%>
+        <div class="addStudtent">
+            <div class="Box" id="heading">
+                <h1>
+                    <%= ClassName %>
+                </h1>
+            </div>
+    
+            <div class="Box">
+                <% listStudent.forEach((student)=>{ %>
+                    <form method="post" action="/delete">
+                        <div class="item">
+                            <input type="hidden" name="ClassName" value="<%=ClassName%>"></input>
+                            <input type="Checkbox" name="checkBox" value="<%= student._id %>"
+                                onChange="this.form.submit()">
+                            <p>
+                                <%= student.enrolment %>
+                            </p>
+                            <p>
+                                <%= student.email %>
+                            </p>
+                        </div>
+                    </form>
+    
+    
+                    <% }); %>
+                        <form class="studentName" method="POST" action="/addStudent">
+                            <input type="text" name="studentName" placeholder="add enrolment" autocomplete="off">
+                            <input type="text" name="email" placeholder="add email of student" autocomplete="off">
+                            <button type="submit" name="ClassName" value="<%=ClassName %>" >+</button>
+                        </form>
+            </div>
+        </div>
+
+<%- include("footer") -%>

@@ -1,0 +1,63 @@
+
+body{
+    margin:0;
+    background-color:#dbe2ef;
+
+    font-family: 'Roboto', sans-serif;
+    color:#112d4e;
+}
+
+.header{
+    display:flex;
+    font-size:1rem;
+    padding:1rem;
+    border-bottom:solid;
+}
+
+h2{
+    margin-top:1.5rem;
+    margin-left:4rem;
+}
+.page{
+
+    margin:0 auto;
+    width:100%;
+    max-width:990px;
+    
+}
+
+.quiz{
+    font-size:1.5rem;
+}
+
+ol{
+    margin-top:1rem;
+}
+
+.mcq{
+    padding:1rem;
+}
+
+
+
+.add-btn {
+    margin:2rem;
+    border: none;
+    width: 40%;
+    height:min-content;
+    font-size: 1.5rem;
+    padding: .8rem;
+    background-color: #112d4e;
+    color: #dbe2ef;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    
+
+}
+
+.noselect {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

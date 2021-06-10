@@ -1,0 +1,70 @@
+<%- include("header2") -%>
+    <div class="container">
+        <h1>Create Test</h1>
+        <form action="/create_test" method="post">
+
+            <div class="main-box">
+                <div class="row">
+                    <div class="col">
+                        <label for="test_name">
+                            Test Name
+                        </label>
+                        <input type="text" class="box" name="test_name">
+                    </div>
+                    <div class="col">
+                        <label for="class">
+                            Select class
+                        </label>
+                        <select name="class">
+                            <% listclass.forEach((ListClass)=>{ %>
+
+                                <option vlaue="<%= ListClass.name %>">
+                                    <%= ListClass.name %>
+                                </option>
+
+                                <% }) %>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="total_marks">Total Mark</label>
+                        <input type="number" class="box" name="total_marks">
+                    </div>
+
+                    <div class="col">
+                        <label for="pass_mark">Passing Marks</label>
+                        <input type="number" class="box" name="pass_mark">
+                    </div>
+                    <div class="col">
+                        <label for="Overtime">
+                            Exam Over Time
+                        </label>
+                        <input type="time" class="box" name="Overtime" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="total_question">Total question</label>
+                        <input type="number" class="box" name="total_question">
+                    </div>
+                    <div class="col">
+                        <label for="date">
+                            Exam date
+                        </label>
+                        <input type="date" class="box" name="date">
+                    </div>
+                    <div class="col">
+                        <label for="time">
+                            Exam Start Time
+                        </label>
+                        <input type="time" class="box" name="time">
+                    </div>
+                </div>
+            </div>
+            <button class="btn" type="submit" name="exam_data">Next</button>
+        </form>
+    </div>
+
+    <%- include("footer") -%>

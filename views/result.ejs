@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Open+Sans:wght@300&family=Playfair+Display+SC&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/create_class.css">
+</head>
+<body>
+    <div class="page">
+        <div class="sidebar">
+            <h1>Site Name</h1>
+    
+               <div class="profile"> 
+                   <!-- <img src="me.jpg" class="profile-photo" alt="profile_phote"> -->
+                <h3><%= username %></h3>
+                
+            </div>
+           
+           
+            <div>
+                <nav>
+                    <ul class="nav-bar">
+                        <li id="3" class="nav-link" ><a href="/dashboard">Dashboard</a></li>
+                        <li id="4" class="nav-link" ><a href="/class">Class</a></li>
+                        <li id="1" class="nav-link" ><a href="/create_test">Create Test</a></li>
+                        <li id="2" class="nav-link" ><a href="/result">Results</a></li>
+                       
+                        
+                    </ul>
+                    
+                </nav>
+               
+            </div>
+            <a class="logout-btn" href="">logout</a>
+        </div>
+        <div class="create-class">
+            <h1>List of classroom</h>
+                <table>
+                    <tr> 
+                        <td class="tableHeading">Test Name</td>
+                        <td class="tableHeading">Class Name</td>
+                        <td class="tableHeading">No. of Student</td>
+                    </tr>
+                    <% listresult.forEach((listOfResult)=>{ %>
+                        
+                        <tr class="class-name">
+                            <td ><a id="link2" href="/resultClass/<%= listOfResult.name %>" ><%= listOfResult.name %> </a></td>
+                            <td><%= listOfResult.class %></td>
+                            <td><%= listOfResult.listOfStudent.length %> </td>
+                        </tr>
+                  <%   }) %>
+                   
+                   
+                </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Open+Sans:wght@300&family=Playfair+Display+SC&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <noscript>
+        <meta http-equiv=refresh content='0; url=http://127.0.0.1:3000/noscript'>
+        <meta http-equiv="refresh" content="5">
+    </noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/quiz.css">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <h1><%= TestName %></h1>
+            <h2>Marks :- <%= marks %></h2>
+            <h2>TotalQuestion :- <%= totalquestion %></h2>
+        </div>
+
+        <div class="quiz">
+            <form action="/TestStart/<%= TestId %>/<%= userId%>/<%= enrolment %>" method="post">
+                <ol>
+                    <% for(var i=0;i<Quiz.length;i++){ %>
+                        <li>
+                            <h3 class="noselect">
+                                <%= Quiz[i][0] %>
+                            </h3>
+
+                            <div class="mcq">
+                                <input type="radio" name=<%= i %>  value="<%= Quiz[i][1] %>" />
+                                <label for=<%= i %>>
+                                    <%= Quiz[i][1] %>
+                                </label>
+                            </div>
+
+                            <div class="mcq">
+                                <input type="radio" name=<%= i %>  value="<%= Quiz[i][2] %>" />
+                                <label for=<%= i %>>
+                                    <%= Quiz[i][2] %>
+                                </label>
+                            </div>
+
+                            <div class="mcq">
+                                <input type="radio" name=<%= i %>  value="<%= Quiz[i][3] %>" />
+                                <label for=<%= i %>>
+                                    <%= Quiz[i][3] %>
+                                </label>
+                            </div>
+
+                            <div class="mcq">
+                                <input type="radio" name=<%= i %>  value="<%= Quiz[i][4] %>" />
+                                <label for=<%= i %>>
+                                    <%= Quiz[i][4] %>
+                                </label>
+                            </div>
+
+                        </li>
+                        <% } %>
+                </ol>
+                <button class="add-btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
+
+</html>

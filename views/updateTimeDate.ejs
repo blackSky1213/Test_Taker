@@ -1,0 +1,34 @@
+<%- include("header2") -%>
+    <div class="container">
+        <h1>Update Date&Time</h1>
+        <form action="/UpdateTime/<%= TestId %>" method="post">
+
+            <div class="main-box">
+              
+                <div class="row">
+                    
+                    <div class="col">
+                        <label for="date">
+                            Exam date
+                        </label>
+                        <input type="date" class="box" name="date" value="<%= Date %>">
+                    </div>
+                    <div class="col">
+                        <label for="time">
+                            Exam Start Time
+                        </label>
+                        <input type="time" class="box" name="time" value="<%= Time %>">
+                    </div>
+                    <div class="col">
+                        <label for="Overtime">
+                            Exam Over Time
+                        </label>
+                        <input type="time" class="box" name="Overtime" value="<%= overTime %>">
+                    </div>
+                </div>
+            </div>
+            <button class="btn" type="submit" name="exam_data">Update</button>
+        </form>
+    </div>
+
+    <%- include("footer") -%>

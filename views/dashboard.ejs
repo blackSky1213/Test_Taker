@@ -1,0 +1,55 @@
+<%- include("header") -%>
+
+<div class="dasboard">
+
+    <% listOfTest.forEach((test)=>{ %>  
+        <div class="dash">
+            <div class="dash-col">
+                <div class="row">
+                    <div class="column" >
+                        <p>Test Name         : </p> <p class="detalis"> <%= test.name %></p>
+                    </div>
+                    <div class="column">
+                        <p>Marks             : </p> <p class="detalis"> <%= test.totalMark %></p>
+                        
+                    </div>
+                    <div class="column">
+                        <p>Total Question    : </p> <p class="detalis"> <%= test.totalQuestion %></p>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                   
+                    <div class="column">
+                        <p>Class             : </p> <p class="detalis"><%= test.class %></p>
+                       
+                    </div>
+
+                    <div class="column">
+                        <p>test date and time : </p> <p class="detalis"><%= test.ExamDate %> <%= test.ExamTime %> </p>
+                    </div>
+                    <div class="column">
+                        <p>testOver date and time : </p> <p class="detalis"><%= test.ExamDate %> <%= test.ExamOverTime %> </p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="column">
+                <p>test Url : </p> <p class="detalis"> <%= test.testurl %> </p>
+            </div>
+            <div class="btn-row">
+                <div class="column">
+                    <a class="delete add-btn" href="/testDelete/<%= test._id %>"> delete</a>
+                    <a class="delete add-btn" href="/UpdateTime/<%= test._id %>"> update Time&Date</a>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+
+    <%}) %>
+    
+</div>
+
+<%- include("footer") -%>

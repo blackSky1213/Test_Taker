@@ -1,0 +1,49 @@
+<%- include("header2") -%>
+
+        
+        <form method="post" class="quiz-box" action="/create_mcq/<%= TestId %>/<%= TotalQuestion %>">
+            <div class="col">
+                <label for="question">question
+                </label>
+                <input class="box question"   type="text" autocomplete="off" name="question">
+            </div>
+           <div class="mcq">
+            <div class="row">
+                <div class="col">
+                    <label for="option1">
+                        A). 
+                    </label>
+                    <input class=" box" type="text" autocomplete="off" name="option1">
+                </div>
+                <div class="col">
+                    <label for="option2">
+                        B).
+                    </label>
+                    <input class=" box" type="text" autocomplete="off" name="option2">
+                </div>
+            </div>
+           <div class="row">
+            <div class="col">
+                <label for="option3">
+                    C).
+                </label>
+                <input class=" box" type="text" autocomplete="off" name="option3">
+            </div>
+            <div class="col">
+                <label for="option4">
+                    D).
+                </label>
+                <input class=" box" type="text" autocomplete="off" name="option4">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col">
+                <label for="correctAnswer">
+                    Correct Answer
+                </label>
+                <input class=" box" type="text" autocomplete="off" name="correctAnswer">
+            </div>
+               <button class="add-btn" type="submit" name="addquestion">add Question</button>
+           </div>            
+        </form>
+        <%- include("footer") -%>
